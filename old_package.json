@@ -1,0 +1,18 @@
+{
+  "name": "sebastian-fuss",
+  "version": "2021.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sebastian Fuss <mail@sebastian-fuss.de>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "bootstrap": "^5.1.1"
+  },
+  "devDependencies": {
+    "sass": "^1.41.0"
+  }
+}
