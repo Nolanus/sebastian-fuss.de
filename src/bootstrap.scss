@@ -1,18 +1,27 @@
 // Custom.scss
 $sf_yellow: #FDC830;
-$sf_yellow_light: rgba(253, 200, 48, 0.5);
+$sf_yellow_opaque: rgba(253, 200, 48, 0.5);
+$sf_yellow_light: #f8e6b1;
 $sf_orange: #F37335;
-
-// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
-@import "../node_modules/bootstrap/scss/functions";
-
 $link-color: $sf_yellow;
-$link-hover-color: $sf_yellow;
+$link-hover-color: $sf_orange;
 $link-decoration: none;
+$link-hover-decoration: underline;
 $headings-font-family: 'Source Sans Pro', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $font-family-sans-serif: 'Source Sans Pro', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 $font-weight-base: 300;
 $headings-font-weight: 200;
+
+:root {
+  --sf-color-yellow: #{$sf_yellow};
+  --sf-color-yellow-opaque: #{$sf_yellow_opaque};
+  --sf-color-yellow-light: #{$sf_yellow_light};
+  --sf-color-orange: #{$sf_orange};
+  --sf-font: #{$headings-font-family};
+}
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
 
 // 3. Include remainder of required Bootstrap stylesheets
 @import "../node_modules/bootstrap/scss/variables";
@@ -21,7 +30,6 @@ $headings-font-weight: 200;
 // 2. Include any default variable overrides here
 $theme-colors: map-merge($theme-colors, (primary: $sf_yellow));
 $theme-colors: map-remove($theme-colors, "secondary", "success", "danger", "warning", "info", "light");
-
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
 @import "../node_modules/bootstrap/scss/bootstrap";

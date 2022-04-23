@@ -1,6 +1,6 @@
 {
   "name": "sebastian-fuss",
-  "version": "0.0.0",
+  "version": "2021.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
+  "author": "Sebastian Fuss <mail@sebastian-fuss.de>",
   "private": true,
   "dependencies": {
     "@angular/animations": "~12.0.3",
@@ -18,6 +19,11 @@
     "@angular/platform-browser": "~12.0.3",
     "@angular/platform-browser-dynamic": "~12.0.3",
     "@angular/router": "~12.0.3",
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@halloverden/ngx-cookiebot": "^1.0.7",
+    "bootstrap": "^5.1.1",
+    "ngx-page-scroll": "^7.0.5",
+    "ngx-page-scroll-core": "^7.0.5",
     "rxjs": "~6.6.0",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"

@@ -1,0 +1,205 @@
+.main-timeline {
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 100%;
+    background: var(--sf-color-orange);
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0
+  }
+
+  .timeline::after {
+    content: "";
+    display: block;
+    clear: both
+  }
+
+  .date-content {
+    width: 50%;
+    float: left;
+    margin-top: 22px;
+    position: relative
+  }
+
+  .date-content::before {
+    content: "";
+    width: calc((100% - 125px) / 2 - 20px);
+    height: 2px;
+    background: linear-gradient(to left, var(--sf-color-orange), var(--sf-color-yellow));
+    margin: auto 0;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    bottom: 0
+  }
+
+  .date-outer {
+    width: 125px;
+    height: 125px;
+    font-size: 16px;
+    text-align: center;
+    margin: auto;
+    z-index: 1
+  }
+
+  .date-outer::after {
+    content: "";
+    width: 125px;
+    height: 125px;
+    margin: 0 auto;
+    border-radius: 0.3rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.33s ease-out 0s
+  }
+
+  .date-outer::after {
+    border: 2px solid var(--sf-color-yellow);
+  }
+
+  .date {
+    width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 22%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+
+    .month {
+      font-size: 18px;
+    }
+
+    .year {
+      font-size: 30px;
+      /*font-family: var(--bs-hea $headings-font-family;*/
+      line-height: 45px;
+      position: relative;
+    }
+  }
+
+  .date.past {
+    top: 13%;
+
+    .year {
+      font-size: 24px;
+    }
+
+    & > span:nth-child(2)::before {
+      content: "";
+      width: 5%;
+      height: 2px;
+      background: var(--sf-color-yellow);
+      position: absolute;
+      left: 47.5%;
+    }
+  }
+
+  .timeline-content {
+    width: 50%;
+    padding: 20px 0 20px 50px;
+    float: right
+  }
+
+  .description {
+    margin-bottom: 0
+  }
+
+  .timeline:nth-child(2n) .date-content::before {
+    background: linear-gradient(to right, var(--sf-color-orange), var(--sf-color-yellow));
+  }
+
+  .timeline:nth-child(2n) .date-content {
+    float: right
+  }
+
+  .timeline:nth-child(2n) .date-content::before {
+    left: 10px
+  }
+
+  .timeline:nth-child(2n) .timeline-content {
+    padding: 20px 50px 20px 0;
+    text-align: right
+  }
+
+  @media only screen and (max-width: 991px) {
+    .date-content {
+      margin-top: 35px
+    }
+
+    .timeline-content {
+      padding: 10px 0 10px 30px
+    }
+
+    .title {
+      font-size: 17px
+    }
+
+    .timeline:nth-child(2n) .timeline-content {
+      padding: 10px 30px 10px 0
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .main-timeline::before {
+    margin: 0;
+    left: 7px
+  }
+
+  .main-timeline .timeline {
+    margin-bottom: 20px
+  }
+
+  .main-timeline .timeline:last-child {
+    margin-bottom: 0
+  }
+
+  .main-timeline .date-content {
+    width: 95%;
+    float: right;
+    margin-top: 0
+  }
+
+  .main-timeline .date-content::before {
+    display: none
+  }
+
+  .main-timeline .date-outer {
+    width: 110px;
+    height: 110px
+  }
+
+  .main-timeline .date-outer::before,
+  .main-timeline .date-outer::after {
+    width: 110px;
+    height: 110px
+  }
+
+  .main-timeline .date {
+    top: 20%
+  }
+
+  .main-timeline .year {
+    font-size: 24px
+  }
+
+  .main-timeline .timeline-content,
+  .main-timeline .timeline:nth-child(2n) .timeline-content {
+    width: 95%;
+    text-align: center;
+    padding: 10px 0
+  }
+
+  .main-timeline .title {
+    margin-bottom: 10px
+  }
+}

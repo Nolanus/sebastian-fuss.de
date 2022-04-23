@@ -1,0 +1,19 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-8 offset-md-2">
+        <h2>Pan-pan, File not found!</h2>
+
+        <div class="alert alert-primary" role="alert">
+            <strong>The content you requested is not available.</strong><br/>
+              Possibly it got lost during a restructuring of this website or you followed a bad link.
+        </div>
+        <p>You may go back to the previous page using your browser's back button or visit the <a
+          [routerLink]="''">homepage</a>. In case you're desperately looking for the requested content try the <a
+          [href]="'http://web.archive.org/web/*/www.sebastian-fuss.de' + currentPath" target="_blank"
+          rel="nofollow noopener">WayBackMachine</a>
+          or <a [routerLink]="['/', 'contact']">get in touch with me</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
