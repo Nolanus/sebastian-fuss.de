@@ -2,8 +2,16 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { NgxCookiebotConfig } from "@halloverden/ngx-cookiebot";
+
+export class CookiebotConfig extends NgxCookiebotConfig {
+  blockingMode = 'manual';
+  cbId: string = 'dummy';
+}
+
 export const environment = {
-  production: false
+  production: false,
+  cookieBot: CookiebotConfig,
 };
 
 /*

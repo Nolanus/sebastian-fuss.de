@@ -20,7 +20,7 @@ export class ContactComponent implements OnInit {
     text: ''
   };
 
-  public status: string|null = null;
+  public status: string | null = null;
   public sending: boolean = false;
 
   constructor(private http: HttpClient) {
@@ -32,8 +32,8 @@ export class ContactComponent implements OnInit {
   public sendMessage(): void {
     this.form.form.markAllAsTouched();
 
-    if (this.form.invalid) {
-      return
+    if (this.form.form.invalid) {
+      return;
     }
 
     this.status = null;
@@ -44,17 +44,15 @@ export class ContactComponent implements OnInit {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       }
-    })
-      .subscribe(
-        (data: any) => {
-          this.sending = false;
-          this.input.text = '';
-          this.status = '';
-        },
-        (error: any) => {
-          this.sending = false;
-          this.status = ContactComponent.extractErrorMessage(error);
-        });
+    }).subscribe((data: any) => {
+        this.sending = false;
+        this.input.text = '';
+        this.status = '';
+      },
+      (error: any) => {
+        this.sending = false;
+        this.status = ContactComponent.extractErrorMessage(error);
+      });
   }
 
   private static extractErrorMessage(error: any) {

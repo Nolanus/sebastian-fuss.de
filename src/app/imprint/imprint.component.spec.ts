@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 import { ImprintComponent } from './imprint.component';
 
@@ -8,9 +9,9 @@ describe('ImprintComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ImprintComponent ]
-    })
-    .compileComponents();
+      declarations: [ImprintComponent],
+      imports: [RouterTestingModule],
+    }).compileComponents();
   });
 
   beforeEach(() => {

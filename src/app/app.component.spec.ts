@@ -1,16 +1,20 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { NgxCookiebotService } from '@halloverden/ngx-cookiebot';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
       ],
       declarations: [
         AppComponent
       ],
+      providers: [
+        { provide: NgxCookiebotService, useValue: { } }
+      ]
     }).compileComponents();
   });
 
@@ -20,16 +24,18 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'sebastian-fuss'`, () => {
+  it(`should have social content`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('sebastian-fuss');
+    expect(app.social).toBeDefined();
+    expect(app.social.length).toBeGreaterThan(0);
   });
 
-  it('should render title', () => {
+  it('should display social content title', () => {
     const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('sebastian-fuss app is running!');
+    expect(compiled.querySelectorAll('.social a').length).toEqual(app.social.length);
   });
 });

@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { CookiebotConfig } from '../environments/cookiebot.config';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { CookiebotConfig } from '../environments/cookiebot.config';
     AppRoutingModule,
     NgxPageScrollCoreModule.forRoot(),
     NgxPageScrollModule,
-    NgxCookiebotModule.forRoot(CookiebotConfig)
+    NgxCookiebotModule.forRoot(environment.cookieBot)
   ],
   providers: [],
   bootstrap: [AppComponent]

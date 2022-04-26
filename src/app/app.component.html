@@ -10,7 +10,7 @@
           Frankfurt-based developer, project manager,<br class="d-none d-lg-inline">
           basketball coach and referee, aviation enthusiast.
         </p>
-        <p>
+        <p class="social">
           <a *ngFor="let _social of social;  let first = first; let last = last" [href]="_social.link" [title]="_social.title" class="btn btn-outline-primary" [class.me-1]="first" [class.ms-1]="last" [class.mx-1]="!first && !last"><i class="fa-fw" [class]="_social.iconClasses"></i></a>
         </p>
       </div>
