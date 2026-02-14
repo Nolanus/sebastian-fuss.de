@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 })
 export class ContactComponent implements OnInit {
 
-  private formUrl = 'http://mail.sebastian-fuss.de/hi';
+  private formUrl = 'https://www.sebastian-fuss.de/mail.php';
 
   @ViewChild('form', { read: NgForm })
   form!: NgForm;
@@ -46,7 +46,6 @@ export class ContactComponent implements OnInit {
       }
     }).subscribe((data: any) => {
         this.sending = false;
-        this.input.text = '';
         this.status = '';
       },
       (error: any) => {
