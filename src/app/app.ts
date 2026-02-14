@@ -1,12 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { NgxCookiebotService } from "@halloverden/ngx-cookiebot";
+import { Component, OnInit, inject } from '@angular/core';
+import { RouterOutlet, RouterLink } from '@angular/router';
+import { NgFor } from '@angular/common';
+import { NgxCookiebotService } from '@halloverden/ngx-cookiebot';
+import { NgxPageScrollModule } from 'ngx-page-scroll';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  standalone: true,
+  imports: [RouterOutlet, RouterLink, NgFor, NgxPageScrollModule],
+  templateUrl: './app.html',
+  styleUrl: './app.scss'
 })
-export class AppComponent implements OnInit {
+export class App implements OnInit {
+  private readonly _cookieBotService = inject(NgxCookiebotService);
 
   public social = [
     {
@@ -29,10 +35,7 @@ export class AppComponent implements OnInit {
       'iconClasses': ['fas', 'fa-plane-departure'],
       'title': 'myFlightradar24'
     },
-  ]
-
-  constructor(private _cookieBotService: NgxCookiebotService) {
-  }
+  ];
 
   ngOnInit(): void {
   }
@@ -41,5 +44,4 @@ export class AppComponent implements OnInit {
     event.preventDefault();
     this._cookieBotService.cookiebot.renew();
   }
-
 }

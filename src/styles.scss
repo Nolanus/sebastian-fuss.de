@@ -1,18 +1,19 @@
+// Bootstrap (Local Configuration from src/bootstrap.scss)
+@use "bootstrap";
+
+// FontAwesome Configuration
+$fa-font-path: "/assets/webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+@import "@fortawesome/fontawesome-free/scss/solid";
+@import "@fortawesome/fontawesome-free/scss/brands";
+
 /* You can add global styles to this file, and also import other style files */
-$fa-font-path:        "~/node_modules/@fortawesome/fontawesome-free/webfonts";
-@import "../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
-@import "../node_modules/@fortawesome/fontawesome-free/scss/solid";
-@import "../node_modules/@fortawesome/fontawesome-free/scss/brands";
-
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;400&display=swap');
-
-@import "bootstrap";
 
 :root {
-  scroll-behavior: auto;
-  --bs-body-font-size: 1.1rem;
+    scroll-behavior: auto;
+    --bs-body-font-size: 1.1rem;
 }
 
 a {
-  transition: color 400ms ease-in-out;
+    transition: color 400ms ease-in-out;
 }

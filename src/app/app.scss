@@ -1,0 +1,64 @@
+.home {
+    position: relative;
+    z-index: 1;
+    background: var(--sf-color-yellow);
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, var(--sf-color-orange), var(--sf-color-yellow));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, var(--sf-color-orange), var(--sf-color-yellow));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    margin-bottom: 200px;
+}
+
+.home::after {
+    content: "";
+    background-image: url("/assets/images/bg.jpg");
+    background-size: cover;
+    background-position: 15% bottom;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.home .container {
+    min-height: 300px;
+    position: relative;
+    bottom: -100px;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 20px 80px 0 rgba(153, 153, 153, .3);
+}
+
+.home .content {
+    vertical-align: middle;
+    align-self: center;
+}
+
+.home .content-media {}
+
+.btn-outline-primary {
+    background: -webkit-linear-gradient(to left, #fff, #fff, var(--sf-color-yellow-opaque), var(--sf-color-yellow-opaque));
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #fff, #fff, var(--sf-color-yellow-opaque), var(--sf-color-yellow-opaque));
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: 300% 100%;
+    background-position-x: 100%;
+    transition: background-position 400ms ease-in-out, color 400ms ease-in-out;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active {
+    background-position-x: 0;
+    background-color: inherit;
+}
+
+footer {
+    a:hover {
+        color: var(--sf-color-yellow-light);
+        text-decoration: none;
+    }
+}

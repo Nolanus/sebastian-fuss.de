@@ -1,30 +1,30 @@
 <section>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="main-timeline">
-          <!-- start experience section-->
-          <div class="timeline position-relative py-5" *ngFor="let position of positions">
-            <div class="icon"></div>
-            <div class="date-content">
-              <div class="date-outer">
-                <span class="date" [class.past]="!!position.end">
-                    <span class="month" *ngIf="!position.end">since</span>
-                    <span class="year" *ngIf="position.end">{{ position.end }}</span>
-                    <span class="year">{{ position.start }}</span>
-                </span>
-              </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="main-timeline">
+                    <!-- start experience section-->
+                    <div class="timeline position-relative py-5" *ngFor="let position of positions">
+                        <div class="icon"></div>
+                        <div class="date-content">
+                            <div class="date-outer">
+                                <span class="date" [class.past]="!!position.end">
+                                    <span class="month" *ngIf="!position.end">since</span>
+                                    <span class="year" *ngIf="position.end">{{ position.end }}</span>
+                                    <span class="year">{{ position.start }}</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="timeline-content">
+                            <h4 class="title mb-2 fw-lighter">{{ position.title }}</h4>
+                            <p class="description">
+                                <span class="fw-bolder">{{ position.company }}</span> - {{position.location }}
+                                <br />{{ position.description }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="timeline-content">
-              <h4 class="title mb-2 fw-lighter">{{ position.title }}</h4>
-              <p class="description">
-                <span class="fw-bolder">{{ position.company }}</span> - {{position.location }}
-                <br/>{{ position.description }}
-              </p>
-            </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
